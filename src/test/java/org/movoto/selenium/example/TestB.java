@@ -6,6 +6,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities; 
+import java.net.*;
+import java.io.*;
+import org.openqa.selenium.remote.RemoteWebDriver; 
+import org.openqa.selenium.remote.RemoteWebElement; 
 
 public class TestB {
 		
@@ -15,7 +20,7 @@ public class TestB {
 	public void setUp() {
 		System.out.println("*******************");
 		System.out.println("launching chrome browser");
-		
+		/*
 		System.setProperty(
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");
@@ -23,6 +28,13 @@ public class TestB {
 		System.setProperty("webdriver.chrome.driver","webdriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		//driver.manage().window().maximize();
+		*/
+		try{
+		DesiredCapabilities capability = DesiredCapabilities.chrome();
+        driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
+		}catch(Exception e){}
+        
+		
 	}
 	
 	@Test
@@ -32,7 +44,8 @@ public class TestB {
 		String strPageTitle = driver.getTitle();
 		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Google"), "Page title doesn't match");
 		*/
-		driver.navigate().to("http://172.18.51.88:8080/devcapsule-spring-1.0/");
+		//driver.navigate().to("http://172.18.51.88:8080/devcapsule-spring-1.0/");
+		driver.get("http://172.18.51.88:8080/devcapsule-spring-1.0/");
 		String strPageTitle = driver.getTitle();
 		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Pizzas"), "Page title doesn't match");
 	}
