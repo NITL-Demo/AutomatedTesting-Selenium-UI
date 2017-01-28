@@ -23,7 +23,7 @@ public class TestB {
 		System.out.println("launching chrome browser");
 		
 		Map<String, Object> chromeOptions = new Map<String, Object>();
-                chromeOptions.put("binary", "/usr/lib/chromium-browser/chromium-browser");
+                chromeOptions.put("binary", "/var/lib/jenkins/chromedriver.exe");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 		
