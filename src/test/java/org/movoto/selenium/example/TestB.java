@@ -11,6 +11,7 @@ import java.net.*;
 import java.io.*;
 import org.openqa.selenium.remote.RemoteWebDriver; 
 import org.openqa.selenium.remote.RemoteWebElement; 
+import java.util.*;
 
 public class TestB {
 		
@@ -21,12 +22,18 @@ public class TestB {
 		System.out.println("*******************");
 		System.out.println("launching chrome browser");
 		
+		Map<String, Object> chromeOptions = new Map<String, Object>();
+                chromeOptions.put("binary", "/usr/lib/chromium-browser/chromium-browser");
+                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+		
 		System.setProperty(
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");
 		//System.setProperty("webdriver.chrome.driver","D:\\codebase\\SourceCode-Examples\\chromedriver_win32\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
+		driver = new ChromeDriver(capabilities);
 		//driver.manage().window().maximize();
 		
 		
