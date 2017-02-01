@@ -46,7 +46,7 @@ public class TestB {
         driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
 		}catch(Exception e){}
              */
-		
+		System.out.println("*******************Browser Started******************");
 	}
 	
 	@Test
