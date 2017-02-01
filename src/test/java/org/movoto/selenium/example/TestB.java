@@ -35,7 +35,8 @@ public class TestB {
 		//System.setProperty("webdriver.chrome.driver","D:\\codebase\\SourceCode-Examples\\chromedriver_win32\\chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
 		//driver = new ChromeDriver();
-		driver = new ChromeDriver(capabilities);
+		//driver = new ChromeDriver(capabilities);
+		driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		//driver.manage().window().maximize();
 		driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
