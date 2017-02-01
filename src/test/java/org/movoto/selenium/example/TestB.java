@@ -27,7 +27,8 @@ public class TestB {
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
                 chromeOptions.put("binary", "/var/lib/jenkins/chromedriver.exe");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+		//capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+		//capabilities.setPlatform(Platform.ANY);
 		
 		/*System.setProperty(
                 "webdriver.chrome.driver",
