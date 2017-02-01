@@ -33,7 +33,7 @@ public class TestB {
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");*/
 		//System.setProperty("webdriver.chrome.driver","D:\\codebase\\SourceCode-Examples\\chromedriver_win32\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
+		//System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
 		//driver = new ChromeDriver();
 		driver = new ChromeDriver(capabilities);
 		//driver.manage().window().maximize();
