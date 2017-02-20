@@ -32,6 +32,7 @@ public class TestB {
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 		capabilities.setPlatform(Platform.ANY);
+		capabilities.setCapability("browser_version", "54.0.2840.87");
 		
 		
 		
