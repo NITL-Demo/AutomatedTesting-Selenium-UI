@@ -33,8 +33,15 @@ public class TestB {
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 		capabilities.setPlatform(Platform.ANY);
 		
+		
+		
+		try{
+		//DesiredCapabilities capability = DesiredCapabilities.chrome();
+                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
+		}catch(Exception e){}
+            
 	
-		 driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+		// driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		/*System.setProperty(
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");*/
