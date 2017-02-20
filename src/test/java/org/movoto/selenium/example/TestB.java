@@ -27,6 +27,7 @@ public class TestB {
 		System.out.println("*******************");
 		System.out.println("launching chrome browser");
 		
+		/*
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
                 chromeOptions.put("binary", "/var/lib/jenkins/chromedriver.exe");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
@@ -34,11 +35,14 @@ public class TestB {
 		capabilities.setPlatform(Platform.ANY);
 		capabilities.setCapability("browser_version", "54.0.2840.87");
 		
-		
+		*/
 		
 		try{
-		//DesiredCapabilities capability = DesiredCapabilities.chrome();
-                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+		    System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");	
+		     DesiredCapabilities capability = DesiredCapabilities.firefox();
+		      capability.setBrowserName("firefox");//AGAIN, use the right browser name that you can get from the hub's config page
+                      capability.setPlatform(Platform.ANY);//	
+                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
 		}catch(Exception e){
 		  System.out.println("*******************"+e.getMessage());
 		}
