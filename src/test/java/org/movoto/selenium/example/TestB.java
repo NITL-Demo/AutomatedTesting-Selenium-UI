@@ -33,6 +33,8 @@ public class TestB {
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 		capabilities.setPlatform(Platform.ANY);
 		
+	
+		 driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
 		/*System.setProperty(
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");*/
@@ -40,20 +42,21 @@ public class TestB {
 		//System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
 		//driver = new ChromeDriver();
 		//driver = new ChromeDriver(capabilities);
-		try{
+		/*try{
 		//driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
-	        System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");
-	        /*		
+	        //System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");
+	        		
 		FirefoxBinary binary = new FirefoxBinary(new File("/usr/lib/firefox/firefox"));
                 binary.setEnvironmentProperty("DISPLAY",System.getProperty("lmportal.xvfb.id",":1"));
                 driver = new FirefoxDriver(binary,null);	
-		*/	
+			
 		driver = new FirefoxDriver();	
 		driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		}catch(Exception ex){
 			 ex.printStackTrace();
 		 }
+		 */
 		/*
 		try{
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
