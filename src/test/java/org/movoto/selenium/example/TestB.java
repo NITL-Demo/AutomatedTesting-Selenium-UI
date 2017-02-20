@@ -15,6 +15,7 @@ import java.util.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestB {
 		
@@ -39,7 +40,8 @@ public class TestB {
 		//driver = new ChromeDriver();
 		//driver = new ChromeDriver(capabilities);
 		try{
-		driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+		//driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+		driver = new FirefoxDriver();	
 		driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		}catch(Exception ex){
