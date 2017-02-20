@@ -27,16 +27,26 @@ public class TestB {
 		System.out.println("*******************");
 		System.out.println("launching chrome browser");
 		
-		/*
+		
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
                 chromeOptions.put("binary", "/var/lib/jenkins/chromedriver.exe");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-		capabilities.setPlatform(Platform.ANY);
+		capabilities.setPlatform(Platform.LINUX);
 		capabilities.setCapability("browser_version", "54.0.2840.87");
+		capabilities.setBrowserName("chrome");
 		
-		*/
+		try{
+		   
+		     
+                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+		}catch(Exception e){
+		  System.out.println("*******************"+e.getMessage());
+		}
+                
 		
+		
+		/*
 		try{
 		    System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");	
 		     DesiredCapabilities capability = DesiredCapabilities.firefox();
@@ -46,7 +56,7 @@ public class TestB {
 		}catch(Exception e){
 		  System.out.println("*******************"+e.getMessage());
 		}
-            
+                */
 	
 		// driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		/*System.setProperty(
