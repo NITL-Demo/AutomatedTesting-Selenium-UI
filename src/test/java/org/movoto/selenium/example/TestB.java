@@ -39,7 +39,7 @@ public class TestB {
 		try{
 		   
 		     
-                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444"), capabilities);
 		}catch(Exception e){
 		  System.out.println("*******************"+e.getMessage());
 		}
