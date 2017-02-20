@@ -31,11 +31,11 @@ public class TestB {
 		Map<String, Object> chromeOptions = new HashMap<String, Object>();
                 chromeOptions.put("binary", "/var/lib/jenkins/chromedriver.exe");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+		/*capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 		capabilities.setPlatform(Platform.LINUX);
 		capabilities.setCapability("browser_version", "54.0.2840.87");
 		capabilities.setBrowserName("chrome");
-		
+		*/
 		try{
 		   
 		     
