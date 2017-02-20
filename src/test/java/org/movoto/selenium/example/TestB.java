@@ -34,7 +34,7 @@ public class TestB {
 		capabilities.setPlatform(Platform.ANY);
 		
 	
-		 driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
+		 driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		/*System.setProperty(
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");*/
