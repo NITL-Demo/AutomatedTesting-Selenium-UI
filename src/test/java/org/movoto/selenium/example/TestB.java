@@ -44,7 +44,7 @@ public class TestB {
 		//driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 	        System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");
 			
-		FirefoxBinary binary = new FirefoxBinary(new File("/usr/local/bin/firefox"));
+		FirefoxBinary binary = new FirefoxBinary(new File("/usr/lib/firefox/firefox"));
                 binary.setEnvironmentProperty("DISPLAY",System.getProperty("lmportal.xvfb.id",":99"));
                 driver = new FirefoxDriver(binary,null);	
 			
