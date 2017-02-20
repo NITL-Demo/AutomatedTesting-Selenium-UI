@@ -37,7 +37,7 @@ public class TestB {
 		
 		try{
 		//DesiredCapabilities capability = DesiredCapabilities.chrome();
-                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
+                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		}catch(Exception e){}
             
 	
