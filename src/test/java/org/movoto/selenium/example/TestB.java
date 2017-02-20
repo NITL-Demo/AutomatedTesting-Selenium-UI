@@ -45,7 +45,7 @@ public class TestB {
 	        System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");
 			
 		FirefoxBinary binary = new FirefoxBinary(new File("/usr/lib/firefox/firefox"));
-                binary.setEnvironmentProperty("DISPLAY",System.getProperty("lmportal.xvfb.id",":99"));
+                binary.setEnvironmentProperty("DISPLAY",System.getProperty("lmportal.xvfb.id",":1"));
                 driver = new FirefoxDriver(binary,null);	
 			
 		//driver = new FirefoxDriver();	
