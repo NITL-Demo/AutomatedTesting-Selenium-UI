@@ -41,6 +41,7 @@ public class TestB {
 		//driver = new ChromeDriver(capabilities);
 		try{
 		//driver = new RemoteWebDriver( new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+	        System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");
 		driver = new FirefoxDriver();	
 		driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
