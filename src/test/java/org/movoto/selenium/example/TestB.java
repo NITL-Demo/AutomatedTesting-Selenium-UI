@@ -101,7 +101,7 @@ public class TestB {
 		driver.navigate().to("http://172.18.51.87:80/devcapsule-spring-1.0/");
 		//driver.get("http://172.18.51.88:8080/devcapsule-spring-1.0/");
 		String strPageTitle = driver.getTitle();
-		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Pizzas"), "");
+		Assert.assertFalse(strPageTitle.equalsIgnoreCase("Pizzas"), "");
 	}
 	
 	
