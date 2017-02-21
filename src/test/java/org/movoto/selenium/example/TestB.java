@@ -37,9 +37,9 @@ public class TestB {
 		capabilities.setBrowserName("chrome");
 		*/
 		try{
-		   
+		   driver = new FirefoxDriver();
 		     
-                     driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
+                     //driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		}catch(Exception e){
 		  System.out.println("*******************"+e.getMessage());
 		}
