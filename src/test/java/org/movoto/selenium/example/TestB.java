@@ -39,7 +39,7 @@ public class TestB {
 		try{
 		   System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
 		   driver = new FirefoxDriver();
-		     
+		    System.out.println("*******************Browser Started*****Start*************"); 
                      //driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		}catch(Exception e){
 		  System.out.println("*******************"+e.getMessage());
@@ -88,7 +88,7 @@ public class TestB {
         driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
 		}catch(Exception e){}
              */
-		System.out.println("*******************Browser Started******************");
+		System.out.println("*******************Browser Started*****Final*************");
 	}
 	
 	@Test
