@@ -37,6 +37,7 @@ public class TestB {
 		capabilities.setBrowserName("chrome");
 		*/
 		try{
+		   System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
 		   driver = new FirefoxDriver();
 		     
                      //driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
