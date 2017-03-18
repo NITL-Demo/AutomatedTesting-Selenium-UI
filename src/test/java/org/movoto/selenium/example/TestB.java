@@ -30,6 +30,8 @@ import org.openqa.selenium.TakesScreenshot;
 public class TestB {
 		
 	WebDriver driver;
+	ExtentReports extentreport;
+	String outputFileLocation="test-output/";
 	
 	@BeforeClass
 	public void setUp() {
@@ -48,6 +50,7 @@ public class TestB {
 		try{
 		   System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
 		   driver = new FirefoxDriver();
+		   extentreport= new ExtentReports(outputFileLocation+"ExtentReport/"+"FunctionalTest.html");	
 		    System.out.println("*******************Browser Started*****Start*************"); 
                      //driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capabilities);
 		}catch(Exception e){
