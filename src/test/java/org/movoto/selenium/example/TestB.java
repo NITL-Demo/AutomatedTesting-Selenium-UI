@@ -197,7 +197,16 @@ public class TestB {
 	
 	
 	
-	
+	     public void getscreenshot(String filename) throws Exception 
+	     {
+		     File scrFile = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);
+		     FileUtils.copyFile(scrFile, new File(outputFileLocation+"Images/"+filename+".png"));          
+	     }
+	 
+	 public void flushReport(ExtentTest test,LogStatus status,String Data,String Data1,String path){
+		 test.log(status,Data,Data1+path);
+		 extentreport.flush();
+	 }
 	
 	
 
