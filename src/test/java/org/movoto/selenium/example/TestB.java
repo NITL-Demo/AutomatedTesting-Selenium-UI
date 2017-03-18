@@ -119,6 +119,73 @@ public class TestB {
 	}
 	
 	
+	@Test
+	public void service() throws Exception{
+		
+		ExtentTest test= extentreport.startTest(Thread.currentThread().getStackTrace()[1].getMethodName());
+		
+		driver.get("http://172.18.51.87:80/devcapsule-spring-1.0/");
+		getscreenshot("Homepage");
+		flushReport(test,LogStatus.PASS, "Website URL", url, "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Homepage.png" + ">Screenshot</a></div>");
+		// Add Base
+		driver.findElement(By.cssSelector("button.btn-primary:nth-child(1)")).click();
+		driver.switchTo().activeElement();
+		Thread.sleep(3000);
+		driver.findElement(By.id("base-name")).sendKeys(prop.getProperty("basename"));
+		getscreenshot("Base_Added");
+		flushReport(test, LogStatus.PASS, "Base Name ", prop.getProperty("basename"), "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Base_Added.png" + ">Screenshot</a></div>");
+		Thread.sleep(1000);
+		driver.findElement(By.id("savebutton")).click();
+		
+		// Add Topings
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector(".nav > li:nth-child(2) > a:nth-child(1)")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("button.btn-primary:nth-child(1)")).click();
+		driver.switchTo().activeElement();
+		Thread.sleep(3000);
+		driver.findElement(By.id("topping-name")).sendKeys(prop.getProperty("toppingname"));
+		getscreenshot("Toppings_Added");
+		flushReport(test,LogStatus.PASS, "Topping Name ", prop.getProperty("toppingname"), "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Toppings_Added.png" + ">Screenshot</a></div>");
+		Thread.sleep(1000);
+		driver.findElement(By.id("savebutton")).click();
+		
+		//Add Pizza
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector(".nav > li:nth-child(3) > a:nth-child(1)")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("button.btn-primary:nth-child(1)")).click();
+		driver.switchTo().activeElement();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector("#pizza-name")).sendKeys(prop.getProperty("PName"));
+		Select oSelect = new Select(driver.findElement(By.cssSelector("#base-name")));
+		oSelect.selectByVisibleText(prop.getProperty("basename"));
+		driver.findElement(By.xpath("//*[@id='pizzaModal']/div/div/div[3]/form/div[3]/div[4]/label/input")).click();
+		driver.findElement(By.id("pizza-price")).sendKeys(prop.getProperty("price"));
+		getscreenshot("Pizza_Added");
+		flushReport(test,LogStatus.PASS, "Pizza Price ", prop.getProperty("price"), "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Pizza_Added.png" + ">Screenshot</a></div>");
+		Thread.sleep(1000);
+		driver.findElement(By.id("savebutton")).click();
+		
+		//Add Order
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector(".nav > li:nth-child(4) > a:nth-child(1)")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector(".col-md-6")).click();
+		driver.switchTo().activeElement();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='orderModal']/div/div/div[3]/form/div/div/div[2]/div/div/label/input")).click();
+		getscreenshot("Order_Added");
+		flushReport(test, LogStatus.PASS, "Order ", "Done" , "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Order_Added.png" + ">Screenshot</a></div>");
+		Thread.sleep(1000);
+		driver.findElement(By.id("savebutton")).click();
+		extentreport.endTest(test);
+		
+	}
+	
+	
+	
+	
 	
 	
 
