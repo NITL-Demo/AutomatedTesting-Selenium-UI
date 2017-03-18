@@ -24,7 +24,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
+import org.apache.commons.io.FileUtils;
 
 
 public class TestB {
@@ -138,7 +138,7 @@ public class TestB {
 		
 		driver.get("http://172.18.51.87:80/devcapsule-spring-1.0/");
 		getscreenshot("Homepage");
-		flushReport(test,LogStatus.PASS, "Website URL", url, "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Homepage.png" + ">Screenshot</a></div>");
+		flushReport(test,LogStatus.PASS, "Website URL", "http://172.18.51.87:80/devcapsule-spring-1.0/", "<div align='right' style='float:right' class='imagesrc'><a href=" + "./../Images/Homepage.png" + ">Screenshot</a></div>");
 		// Add Base
 		driver.findElement(By.cssSelector("button.btn-primary:nth-child(1)")).click();
 		driver.switchTo().activeElement();
@@ -171,7 +171,7 @@ public class TestB {
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#pizza-name")).sendKeys("Veg Delight");
 		Select oSelect = new Select(driver.findElement(By.cssSelector("#base-name")));
-		oSelect.selectByVisibleText(prop.getProperty("basename"));
+		oSelect.selectByVisibleText("Pan Thin Crust");
 		driver.findElement(By.xpath("//*[@id='pizzaModal']/div/div/div[3]/form/div[3]/div[4]/label/input")).click();
 		driver.findElement(By.id("pizza-price")).sendKeys("250");
 		getscreenshot("Pizza_Added");
@@ -199,7 +199,7 @@ public class TestB {
 	
 	     public void getscreenshot(String filename) throws Exception 
 	     {
-		     File scrFile = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);
+		     File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		     FileUtils.copyFile(scrFile, new File(outputFileLocation+"Images/"+filename+".png"));          
 	     }
 	 
